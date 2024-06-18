@@ -1,3 +1,2 @@
-something:
-  - invalid
-  - another invalid
+exclude_dirs:
+  - exceptions
