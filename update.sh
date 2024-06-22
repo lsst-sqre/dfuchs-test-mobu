@@ -23,6 +23,7 @@ done
 
 # Conditionally update the notebook that intentionally blows up
 if [ "${1-}" = "-e" ]; then
+  echo "Changing intentionally bad notebook"
   sed -i "s/:::.*:::/:::$sentinel:::/g" $exception_file
 fi
 
