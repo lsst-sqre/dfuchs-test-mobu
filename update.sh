@@ -11,6 +11,8 @@ sentinel=$(
   tr -dc A-Za-z0-9 </dev/urandom | head -c 13
   echo
 )
+
+# Leave some notebooks unchanged
 files="not-a-notebook.txt simple_notebook_1.ipynb somedir/simple_notebook_2.ipynb"
 exception_file="exceptions/exception_notebook_1.ipynb"
 pr_branch="dfuchs-test-pr"
