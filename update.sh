@@ -3,7 +3,7 @@
 # Change certain files, commit, and push.
 # Helpful for testing the Mobu github integration.
 
-set -eux pipefail
+set -euo pipefail
 
 # Generate a random string
 # https://unix.stackexchange.com/a/230676
