@@ -18,9 +18,9 @@ update_exception=false
 
 # Parse commandline args
 for arg in "${@}"; do
-  if [${arg} = "-e"]; then
+  if [ "${arg}" = "-e" ]; then
     update_exception=true
-  elif [${arg} = "-m"]; then
+  elif [ "${arg}" = "-m" ]; then
     pr_branch=main
   fi
 done
