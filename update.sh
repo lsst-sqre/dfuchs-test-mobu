@@ -14,6 +14,16 @@ sentinel=$(
 files="not-a-notebook.txt simple_notebook_1.ipynb somedir/simple_notebook_2.ipynb"
 exception_file="exceptions/exception_notebook_1.ipynb"
 pr_branch="dfuchs-test-pr"
+update_exception=false
+
+# Parse commandline args
+for arg in "${@}"; do
+  if [${arg} = "-e"]; then
+    update_exception=true
+  elif [${arg} = "-m"]; then
+    pr_branch=main
+  fi
+done
 
 git checkout $pr_branch
 
@@ -22,7 +32,7 @@ for file in $files; do
 done
 
 # Conditionally update the notebook that intentionally blows up
-if [ "${1-}" = "-e" ]; then
+if $update_exception; then
   echo "Changing intentionally bad notebook"
   sed -i "s/:::.*:::/:::$sentinel:::/g" $exception_file
 fi
