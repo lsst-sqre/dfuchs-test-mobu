@@ -38,9 +38,16 @@ done
 if $update_exception; then
   echo "Changing intentionally bad notebook"
   sed -i "s/:::.*:::/:::$sentinel:::/g" $exception_file
-  echo "exclude_dirs:\n  - some-dir\n" > mobu.yaml
+  cat <<- 'END' > mobu.yaml
+	exclude_dirs:
+	  - some-dir
+END
 else
-  echo "exclude_dirs:\n  - some-dir\n  - exceptions\n" > mobu.yaml
+  cat <<- 'END' > mobu.yaml
+	exclude_dirs:
+	  - some-dir
+	  - exceptions
+END
 fi
 
 git add .
