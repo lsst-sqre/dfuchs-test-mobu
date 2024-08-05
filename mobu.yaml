@@ -1,1 +1,2 @@
-exclude_dirs:\n  - some-dir\n
+exclude_dirs:
+  - some-dir
