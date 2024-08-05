@@ -1,3 +1,1 @@
-exclude_dirs:
-  - exceptions
-  - some-dir
+exclude_dirs:\n  - some-dir\n
